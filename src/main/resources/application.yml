@@ -1,0 +1,36 @@
+
+server:
+  servlet:
+    context-path: /
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+
+#pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+logging:
+  level:
+    com.geekcattle : debug
+  file:
+    name: "${user.home}/logs/spring-boot-logging.log"
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml,classpath:mapper/*/*.xml
+  type-aliases-package: com.example.wechat.entity
+
+
+spring:
+  datasource:
+    name : wechat
+    username  : root
+    password  : 123456
+    url : jdbc:mysql://localhost:3306/wechat?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+
+
+
+
